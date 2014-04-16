@@ -1,0 +1,6 @@
+.units-row
+  .unit-centered.unit-50.text-centered
+    %h1 All Entree's!
+    %br
+    - @entrees.each do |entree|
+      %p= link_to entree.title, entree

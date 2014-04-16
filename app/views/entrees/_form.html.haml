@@ -1,0 +1,10 @@
+.units-row
+  .unit-centered.unit-50
+    .forms.text-centered
+      %br
+      = form_for @entree do |f|
+        = f.text_field :title, class: 'width-50 unit-centered', placeholder: "Title"
+        %br
+        = f.text_area :description, class: 'width-50 unit-centered', placeholder: "Description"
+        %br
+        = f.submit "Save", class: 'btn btn-black width-50'

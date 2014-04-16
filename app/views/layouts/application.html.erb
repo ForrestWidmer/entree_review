@@ -8,6 +8,61 @@
 </head>
 <body>
 
+
+    <!-- <#% if flash[:success] %>
+      <div class="alert alert-success">
+        <span class="close"></span>
+        <#%= flash[:success] = "Success!" %>
+      </div>
+    <#% elsif flash[:error] %>
+      <div class="alert alert-success">
+        <span class="close"></span>
+        <#%= flash[:error] = "Something went wrong, try again." %>
+      </div>
+    <#% elsif flash[:notice] %>
+      <div class="alert alert-success">
+        <span class="close"></span>
+        <#%= flash[:notice] %>
+      </div>
+    <#% end %> -->
+
+      <% if flash[:success] %>
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= flash[:success] %>
+        </div>
+      <% elsif flash[:error] %>
+        <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= flash[:error] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert alert-info alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+
+<div class="units-row">
+  <div class="unit-centered unit-80">
+    <header class="group">
+        <nav class="navbar navbar-left">
+            <ul>
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "About", about_path %></li>
+                <li><%= link_to "New Entree", new_entree_path %></li>
+                <li><%= link_to "All Entree's", entrees_path %></li>
+            </ul>
+        </nav>
+        <nav class="navbar navbar-right">
+            <ul>
+                <li>...</li>
+            </ul>
+        </nav>
+    </header>
+  </div>
+</div>
+
 <%= yield %>
 
 </body>

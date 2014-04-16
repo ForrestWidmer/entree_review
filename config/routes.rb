@@ -1,6 +1,11 @@
 EntreeReview::Application.routes.draw do
   
-  get "welcome/about"
+
+  resources :entrees do
+    resources :reviews
+  end
+
+  match "about" => 'welcome#about', via: :get
 
   root to: "welcome#index"
 end
