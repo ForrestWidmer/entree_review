@@ -1,0 +1,12 @@
+- if @imageable.class == Review
+  = form_for [@imageable, @image] do |f|
+    = f.label :image
+    = f.file_field :image, class: 'width-50 unit-centered'
+    %br
+    = f.submit "Save", class: 'btn btn-black width-50'
+- else
+  = form_for [@imageable, @image] do |f|
+    = f.label :image
+    = f.file_field :image, class: 'width-50 unit-centered'
+    %br
+    = f.submit "Save", class: 'btn btn-black width-50'

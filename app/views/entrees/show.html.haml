@@ -5,4 +5,8 @@
     %h1= @entree.title
     %p= @entree.description
     - @reviews.each do |review|
-      %p= link_to review.stars, [@entree, review]
+      %p 
+        = link_to review.stars, [@entree, review]
+        stars!
+    = render 'images/images'
+    = render 'images/form'

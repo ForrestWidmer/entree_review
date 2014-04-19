@@ -6,10 +6,14 @@ class EntreesController < ApplicationController
   def show
     @entree = Entree.find(params[:id])
     @reviews = @entree.reviews
+    @imageable = @entree
+    @images = @imageable.images
+    @image = Image.new
   end
 
   def new
     @entree = Entree.new
+    @image = Image.new
   end
 
   def create

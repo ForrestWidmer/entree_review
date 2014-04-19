@@ -1,4 +1,5 @@
 class Entree < ActiveRecord::Base
   has_many :reviews
-  attr_accessible :description, :title
+  has_many :images, as: :imageable
+  attr_accessible :description, :title, :image
 end

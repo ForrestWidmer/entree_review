@@ -7,4 +7,7 @@
         %br
         = f.text_area :description, class: 'width-50 unit-centered', placeholder: "Description"
         %br
+        = f.label :image
+        = f.file_field :image, class: 'width-50 unit-centered'
+        %br
         = f.submit "Save", class: 'btn btn-black width-50'

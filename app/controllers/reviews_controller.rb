@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
   def index
     @entree = Entree.find(params[:entree_id])
     @reviews = @entree.reviews
@@ -8,6 +7,9 @@ class ReviewsController < ApplicationController
   def show
     @entree = Entree.find(params[:entree_id])
     @review = Review.find(params[:id])
+    @imageable = @review
+    @images = @imageable.images
+    @image = Image.new
   end
 
   def new
@@ -20,7 +22,7 @@ class ReviewsController < ApplicationController
     @review = @entree.reviews.build(params[:review])
     if @review.save
       flash[:success] = "Your review was successfully added! Thanks!"
-      redirect_to [@entree, @review]
+      redirect_to @review
     else
       flash[:error] = "Your review was not saved, please try again."
       render :new
