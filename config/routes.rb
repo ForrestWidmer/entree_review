@@ -1,13 +1,13 @@
 EntreeReview::Application.routes.draw do
 
   # Custom routes for nesting images under entrees
-  get "/entrees/:entree_id/images" => "images#index", as: "entree_images"
-  post "/entrees/:entree_id/images" => "images#create"
-  get "/entrees/:entree_id/images/new" => "images#new", as: "new_entree_image"
-  get "/entrees/:entree_id/images/:id/edit" => "images#edit", as: "edit_entree_image"
-  get "/entrees/:entree_id/images/:id" => "images#show", as: "entree_image"
-  put "/entrees/:entree_id/images/:id" => "images#update"
-  delete "/entrees/:entree_id/images/:id" => "images#destroy"
+  # get "/entrees/:entree_id/images" => "images#index", as: "entree_images"
+  # post "/entrees/:entree_id/images" => "images#create"
+  # get "/entrees/:entree_id/images/new" => "images#new", as: "new_entree_image"
+  # get "/entrees/:entree_id/images/:id/edit" => "images#edit", as: "edit_entree_image"
+  # get "/entrees/:entree_id/images/:id" => "images#show", as: "entree_image"
+  # put "/entrees/:entree_id/images/:id" => "images#update"
+  # delete "/entrees/:entree_id/images/:id" => "images#destroy"
 
 =begin
   # Custom routes for nesting images under reviews
@@ -20,10 +20,13 @@ EntreeReview::Application.routes.draw do
   delete "/entrees/:entree_id/reviews/:review_id/images/:id" => "images#destroy"
 =end
   resources :entrees do
-    resources :reviews do
-      resources :image
-    end
+    resources :images
+    resources :reviews
   end
+  resources :reviews do
+    resources :images
+  end
+ 
 
   match "about" => 'welcome#about', via: :get
 

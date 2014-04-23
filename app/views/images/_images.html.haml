@@ -1,2 +1,3 @@
 - @images.each do |image|
   = image_tag(image.image_url)
+  %small= link_to "Delete", [@imageable, image], method: :delete, confirm: 'Are you sure?'

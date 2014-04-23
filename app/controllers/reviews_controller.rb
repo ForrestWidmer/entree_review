@@ -1,11 +1,15 @@
 class ReviewsController < ApplicationController
-  def index
+  before_filter :get_entree
+
+  def get_entree
     @entree = Entree.find(params[:entree_id])
+  end
+
+  def index
     @reviews = @entree.reviews
   end
 
   def show
-    @entree = Entree.find(params[:entree_id])
     @review = Review.find(params[:id])
     @imageable = @review
     @images = @imageable.images
@@ -13,16 +17,14 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @entree = Entree.find(params[:entree_id])
     @review = Review.new
   end
 
   def create
-    @entree = Entree.find(params[:entree_id])
     @review = @entree.reviews.build(params[:review])
     if @review.save
       flash[:success] = "Your review was successfully added! Thanks!"
-      redirect_to @review
+      redirect_to root_path
     else
       flash[:error] = "Your review was not saved, please try again."
       render :new
@@ -30,12 +32,10 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @entree = Entree.find(params[:entree_id])
     @review = Review.find(params[:id])
   end
 
   def update
-    @entree = Entree.find(params[:entree_id])
     @review = Review.find(params[:id])
       if @review.update_attributes(params[:review])
         flash[:success] = "Review Updated!"

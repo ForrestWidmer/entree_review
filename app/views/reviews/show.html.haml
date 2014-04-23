@@ -1,6 +1,6 @@
-.units-row
-  .unit-centered.unit-50.text-centered
-    = link_to "Edit Review", edit_entree_review_path, class: "btn btn-black"
+.row
+  .col-md-6.text-center.col-centered
+    = link_to "Edit Review", edit_entree_review_path, class: "btn btn-primary"
     %h1= @entree.title
     %p= @review.stars
     %p= @review.body
