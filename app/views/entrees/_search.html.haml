@@ -1,0 +1,8 @@
+.row
+  .col-md-6.text-center
+    .forms.text-centered
+      %br
+      = form_tag entrees_path, method: :get do
+        = text_field_tag :search, params[:search]
+        %br
+        = submit_tag "Search", name: nil
