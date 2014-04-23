@@ -3,5 +3,7 @@ class WelcomeController < ApplicationController
   end
 
   def about
+    @entree = Entree.first
+    @image = @entree.images.last
   end
 end

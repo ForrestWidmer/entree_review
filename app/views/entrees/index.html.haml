@@ -4,4 +4,16 @@
     %h1 All Entree's!
     %br
     - @entrees.each do |entree|
-      %p= link_to entree.title, entree
+      .col-md-3.text-center
+        .panel.panel-primary
+          .panel-heading
+            %h3.panel-title= entree.title
+          .panel-body
+            .thumbnail
+              - if entree.images.empty?
+                %h3 No image yet! Be the first to add one!
+              - else
+                = image_tag(entree.images.last.image_url)
+            .caption
+              %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
+              %p= link_to "Click Here!", entrees_path, class: 'btn btn-primary'

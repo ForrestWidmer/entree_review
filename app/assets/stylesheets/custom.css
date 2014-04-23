@@ -18,6 +18,11 @@
   background-position:center;
 }
 
-.hero-unit {
+.jumbotron {
   padding: 100px;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
 }

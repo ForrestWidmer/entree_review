@@ -1,6 +1,6 @@
 class EntreesController < ApplicationController
   def index
-    @entrees = Entree.search(params[:search])
+    @entrees = Entree.all#search(params[:search])
   end
 
   def show

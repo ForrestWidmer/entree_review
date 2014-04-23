@@ -17,8 +17,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem "jquery-fileupload-rails"
   gem "therubyracer"
-  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem "twitter-bootstrap-rails"
+  gem "less-rails", git: "git@github.com:CQQL/less-rails.git", branch: "less-2.5"
+  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => 'bootstrap3'
 end
 
 gem 'haml'

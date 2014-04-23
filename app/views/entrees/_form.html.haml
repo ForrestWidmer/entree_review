@@ -1,10 +1,10 @@
 .row
-  .col-md-6.text-center
-    .forms.text-centered
+  .col-md-4.col-centered
+    .col-centered
       %br
       = form_for @entree do |f|
-        = f.text_field :title, class: 'width-50 unit-centered', placeholder: "Title"
+        = f.text_field :title, class: 'form-control', placeholder: "Title"
         %br
-        = f.text_area :description, class: 'width-50 unit-centered', placeholder: "Description"
+        = f.text_area :description, class: 'form-control', placeholder: "Description"
         %br
-        = f.submit "Save", class: 'btn btn-black width-50'
+        = f.submit "Save", class: 'btn btn-primary form-control'

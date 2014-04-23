@@ -1,8 +1,8 @@
 .row
-  .col-md-6.text-center
-    .forms.text-centered
+  .col-md-6.col-centered
+    .col-centered
       %br
       = form_tag entrees_path, method: :get do
-        = text_field_tag :search, params[:search]
+        = text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search'
         %br
-        = submit_tag "Search", name: nil
+        = submit_tag "Search", name: nil, class: 'btn btn-primary'
