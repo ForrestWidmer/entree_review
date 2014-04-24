@@ -23,7 +23,7 @@ EntreeReview::Application.routes.draw do
     resources :images
     resources :reviews
   end
-  resources :reviews do
+  resources :reviews, :only => [] do
     resources :images
   end
  

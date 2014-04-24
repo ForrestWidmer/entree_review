@@ -17,7 +17,7 @@ class ImagesController < ApplicationController
     @image = @imageable.images.build(params[:image])
     if @image.save
       flash[:success] = "New image(s) added."
-      redirect_to @imageable
+      redirect_to :back
     else
       render :new
     end
@@ -31,13 +31,13 @@ class ImagesController < ApplicationController
   end
 
 private
-
+  # alternative option:
   # def load_imageable
   #   resource, id = request.path.split('/')[1, 2]
   #   @imageable = resource.singularize.classify.constantize.find(id)
   # end
 
-  # alternative option:
+  
   def load_imageable
     klass = [Entree, Review].detect { |c| params["#{c.name.underscore}_id"] }
     @imageable = klass.find(params["#{klass.name.underscore}_id"])
