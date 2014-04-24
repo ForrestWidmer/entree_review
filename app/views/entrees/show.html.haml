@@ -1,13 +1,14 @@
-.row
-  .col-md-6.text-center.col-centered
-    %br
-    = link_to "Edit Entree", edit_entree_path, class: "btn btn-primary"
-    = link_to "Add Review", new_entree_review_path(@entree), class: "btn btn-primary"
-    %h1= @entree.title
-    %p= @entree.description
-    - @reviews.each do |review|
-      %p 
-        = link_to review.stars, [@entree, review]
-        stars!
-    = render 'images/images'
-    = render 'images/form'
+.container
+  .row
+    .col-md-12.text-center.col-centered
+      %br
+      = link_to "Edit Entree", edit_entree_path, class: "btn btn-primary"
+      = link_to "Add Review", new_entree_review_path(@entree), class: "btn btn-primary"
+      %h1= @entree.title
+      %p= @entree.description
+      - @reviews.each do |review|
+        %p 
+          = link_to review.stars, [@entree, review]
+          stars!
+      = render 'images/images'
+      = render 'images/form'
