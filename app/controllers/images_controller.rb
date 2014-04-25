@@ -27,7 +27,10 @@ class ImagesController < ApplicationController
     @image = @imageable.images.find(params[:id])
     @image.destroy
     flash[:success] = "Image deleted."
-    redirect_to @imageable
+    respond_to do |format|
+      format.html { redirect_to @imageable }
+      #format.js
+    end
   end
 
 private
