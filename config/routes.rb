@@ -22,6 +22,7 @@ EntreeReview::Application.routes.draw do
   resources :entrees do
     resources :images
     resources :reviews
+    get :location, on: :member
   end
   resources :reviews, :only => [] do
     resources :images

@@ -1,14 +1,20 @@
 .container
   .row
-    .col-md-12.text-center.col-centered
+    .col-md-6.text-center
       %br
       = link_to "Edit Entree", edit_entree_path, class: "btn btn-primary"
       = link_to "Add Review", new_entree_review_path(@entree), class: "btn btn-primary"
       %h1= @entree.title
+      %h3= @entree.restaurant
       %p= @entree.description
       - @reviews.each do |review|
         %p 
           = link_to review.stars, [@entree, review]
           stars!
-      = render 'images/images'
+    .col-md-6.text-center
+      %iframe{width: "500", height: "350", frameborder: "1", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyA8AAY4bx91aeNpHe_SKmdIPZTpra-VoNs&q=#{@entree.restaurant},Goodyear+AZ", class: "img-round" }
+  .row
+    .col-md-12.text-center
+      #images
+        = render 'images/images'
       = render 'images/form'

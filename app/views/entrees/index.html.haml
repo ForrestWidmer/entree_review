@@ -8,7 +8,10 @@
         .col-md-2.text-center
           .panel.panel-primary
             .panel-heading
-              %h3.panel-title= ent.title
+              %h3.panel-title
+              = ent.title
+              %br
+              %small= ent.restaurant
             .panel-body
               .thumbnail
                 - if ent.images.empty?

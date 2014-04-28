@@ -3,7 +3,7 @@
     .col-centered
       %br
       = form_tag entrees_path, method: :get do
-        = text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search'
+        = text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search for an Entree!'
         %br
         = submit_tag "Search", name: nil, class: 'btn btn-primary'
       %br  

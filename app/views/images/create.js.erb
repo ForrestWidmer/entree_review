@@ -1,0 +1,2 @@
+$('div#images').append("<%= escape_javascript(render @image) %>");
+$('div#<%= dom_id(@image) %>').effect('highlight');

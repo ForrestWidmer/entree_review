@@ -1,4 +1,10 @@
 class EntreesController < ApplicationController
+
+  def location
+    @entree = Entree.find(params[:id])
+    @restaurant = @entree.restaurant
+  end
+
   def index
     @entrees = Entree.searching(params)
     #@entrees = Entree.all

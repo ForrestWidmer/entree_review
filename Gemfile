@@ -24,6 +24,7 @@ end
 gem 'haml'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'

@@ -19,7 +19,8 @@ class ImagesController < ApplicationController
       flash[:success] = "New image(s) added."
       redirect_to :back
     else
-      render :new
+      flash[:error] = "You must select an image(s)."
+      redirect_to :back
     end
   end
 
