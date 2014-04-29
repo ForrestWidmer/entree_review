@@ -1,6 +1,5 @@
 - @images.each_slice(6) do |images|
-  .row
+  .row#images
     - images.each do |image|
-      .col-md-2.text-center
-        = link_to image_tag(image.image_url(:small)), [@imageable, image], class: 'thumbnail'#, :id => "image_#{image.id}"
-        /%p= link_to "Delete", [@imageable, image], method: :delete, confirm: 'Are you sure?'#, remote: true
+      .col-md-2.text-center#images
+        = link_to image_tag(image.image_url(:small)), [@imageable, image], class: 'thumbnail', id: 'images'

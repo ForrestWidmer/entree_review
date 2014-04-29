@@ -16,3 +16,20 @@
 //= require twitter/bootstrap
 //= require jquery-fileupload/basic
 //= require_tree .
+
+$(document).ready(function(){
+
+  var $img = $("#images")
+  $img.hide()
+    $("#all-images").click(function(){
+      $img.toggle("slow");
+    });
+
+  $("#iframe").hide().fadeIn(2000);
+
+  $(".new_image").hide();
+    $("#img-button").click(function(){
+      $(".new_image").toggle("slow");
+    });
+
+});
