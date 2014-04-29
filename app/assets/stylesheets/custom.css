@@ -41,3 +41,11 @@
 .col-md-12 {
   margin-top: 1em;
 }
+
+#images .col-md-2 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 0px; 
+  padding-right: 0px; 
+  margin-bottom: -32px;
+}

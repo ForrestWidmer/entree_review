@@ -1,9 +1,9 @@
-.col-md-12.text-center
+.col-md-12.text-center.col-centered
   = render 'search'
   %h1 All Entree's!
   %br
   - @entrees.each_slice(6) do |entree|
-    .row
+    .row.col-centered
       - entree.each do |ent|
         .col-md-2.text-center
           .panel.panel-primary
@@ -20,4 +20,4 @@
                   = image_tag(ent.images.last.image_url)
               .caption
                 %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                %p= link_to "Details", ent, class: 'btn btn-primary'
+                %p= link_to "Details", ent, class: 'btn btn-primary btn-block'
