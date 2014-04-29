@@ -16,6 +16,7 @@ class EntreesController < ApplicationController
     @imageable = @entree
     @images = @imageable.images
     @image = Image.new
+    @location = request.location
   end
 
   def new

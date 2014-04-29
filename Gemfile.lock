@@ -80,6 +80,7 @@ GEM
       nokogiri (~> 1.5)
       ruby-hmac
     formatador (0.2.4)
+    geocoder (1.2.0)
     haml (4.0.5)
       tilt
     haml-rails (0.4)
@@ -194,6 +195,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   figaro
   fog
+  geocoder
   haml
   haml-rails
   jquery-fileupload-rails
