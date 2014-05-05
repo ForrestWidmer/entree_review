@@ -1,5 +1,6 @@
-= form_for [@imageable, @image] do |f|
+= form_for [@imageable, @image], html: {multipart: true} do |f|
   %br
-  = f.file_field :image, class: 'col-centered'
+  = f.label :image, "Upload Image(s)"
+  = file_field_tag :image, multiple: true, name: "image[image]", class: 'col-centered'
   %br
-  = f.submit "Save", class: 'btn btn-primary'
+/ = f.submit "Save", class: 'btn btn-primary', id: 'new_image_button'

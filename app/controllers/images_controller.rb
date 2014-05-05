@@ -14,14 +14,14 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = @imageable.images.build(params[:image])
-    if @image.save
-      flash[:success] = "New image(s) added."
-      redirect_to :back
-    else
-      flash[:error] = "You must select an image(s)."
-      redirect_to :back
-    end
+    @image = @imageable.images.create(params[:image])
+    # if @image.save
+    #   flash[:success] = "New image(s) added."
+    #   redirect_to :back
+    # else
+    #   flash[:error] = "You must select an image(s)."
+    #   redirect_to :back
+    # end
   end
 
   def destroy

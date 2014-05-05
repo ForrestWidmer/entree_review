@@ -19,7 +19,7 @@
 
 $(document).ready(function(){
 
-  var $img = $("#images")
+  var $img = $("#image-group")
   $img.hide()
     $("#all-images").click(function(){
       $img.toggle("slow");
@@ -32,4 +32,7 @@ $(document).ready(function(){
       $(".new_image").toggle("slow");
     });
 
+  $('#new_image_button').click(function(){
+    $('#new_image').fileupload()
+  });
 });

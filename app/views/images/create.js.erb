@@ -1,2 +1,5 @@
-$('div#images').append("<%= escape_javascript(render @image) %>");
-$('div#<%= dom_id(@image) %>').effect('highlight');
+<% if @image.new_record? %>
+  alert("Failed to upload images");
+<% else %>
+  $(".row#images:last").append("<%= j render(@image) %>");
+<% end %>

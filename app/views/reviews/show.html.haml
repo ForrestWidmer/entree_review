@@ -4,5 +4,12 @@
     %h1= @entree.title
     %p= @review.stars
     %p= @review.body
-    = render 'images/images'
+.row
+  .col-md-12.text-center
+    %button.btn.btn-primary#all-images
+      Show/Hide Images
+    %button.btn.btn-primary#img-button
+      Add an image?
     = render 'images/form'
+    #image-group
+      = render 'images/images'
