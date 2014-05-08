@@ -1,4 +1,5 @@
-- @images.each_slice(6) do |images|
+- @images.in_groups_of(6, false).each do |group|
   .row#images
-    - images.each do |image|
-      = render image
+    - group.each do |image|
+      .col-md-2.text-center  
+        = link_to image_tag(image.image_url(:small)), [@imageable, image], class: 'thumbnail'

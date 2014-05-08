@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
     @review = @entree.reviews.build(params[:review])
     if @review.save
       flash[:success] = "Your review was successfully added! Thanks!"
-      redirect_to root_path
+      redirect_to [@entree, @review]
     else
       flash[:error] = "Your review was not saved, please try again."
       render :new

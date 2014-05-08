@@ -12,7 +12,7 @@
           = link_to truncate(review.body, length: 25, separator: ' '), [@entree, review]
 
     .col-md-6.text-center
-      %iframe{id: "iframe", width: "500", height: "350", class: "thumbnail", frameborder: "1", src: "https://www.google.com/maps/embed/v1/search?key=AIzaSyA8AAY4bx91aeNpHe_SKmdIPZTpra-VoNs&zoom=8&q=#{@entree.restaurant}+near+#{@location}" }
+      %iframe{id: "iframe", width: "500", height: "350", class: "thumbnail", frameborder: "1", src: "https://www.google.com/maps/embed/v1/search?key=AIzaSyA8AAY4bx91aeNpHe_SKmdIPZTpra-VoNs&zoom=8&q=#{@entree.restaurant},#{@location}" }
   .row
     .col-md-12.text-center
       %button.btn.btn-primary#all-images
@@ -20,5 +20,5 @@
       %button.btn.btn-primary#img-button
         Add an image?
       = render 'images/form'
-      #image-group
-        = render 'images/images'
+  #image-group
+    = render 'images/images'

@@ -14,7 +14,6 @@
 //= require jquery.ui.all
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require jquery-fileupload/basic
 //= require_tree .
 
 $(document).ready(function(){
@@ -32,7 +31,7 @@ $(document).ready(function(){
       $(".new_image").toggle("slow");
     });
 
-  $('#new_image_button').click(function(){
-    $('#new_image').fileupload()
-  });
+  // $('#new_image_button').click(function(){
+  //   $('#new_image').fileupload()
+  // });
 });
