@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-# group :development do
-#   gem 'sqlite3'
-# end
+group :development, :test do
+  gem 'rspec-rails'
+end
 
 # group :production do
 #   gem 'pg'
@@ -32,6 +32,5 @@ gem 'fog'
 gem 'unf'
 gem 'figaro'
 gem 'yaml_db'
-gem 'mysql2'
-gem 'thinking-sphinx'
 gem 'geocoder'
+gem 'pg_search'

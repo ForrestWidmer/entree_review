@@ -1,7 +1,7 @@
 class EntreesController < ApplicationController
 
   def index
-    @entrees = Entree.searching(params)
+    @entrees = Entree.searching(params[:search])
     #@entrees = Entree.all
   end
 
@@ -22,10 +22,11 @@ class EntreesController < ApplicationController
   def create
     @entree = Entree.new(params[:entree])
     if @entree.save
-      flash[:success] = "New Entree created!"
+      flash[:success] = "New Entree created! Now please submit your review!"
       redirect_to @entree
     else
-      flash[:error] = "New Entree was not created, please try again."
+      flash[:error] = "New Entree was not created, please ensure that you are not 
+                       trying to create an item that already exists."
       render :new
     end
   end
