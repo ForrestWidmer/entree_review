@@ -4,6 +4,9 @@
       %br
       = link_to "Edit Entree", edit_entree_path, class: "btn btn-primary"
       = link_to "Add Review", new_entree_review_path(@entree), class: "btn btn-primary"
+  .row
+    .col-md-6.text-center
+      = render 'ratings/rating'
       %h1= @entree.title
       %h3= @entree.restaurant
       %p= @entree.description

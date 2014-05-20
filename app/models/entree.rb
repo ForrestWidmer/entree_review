@@ -1,7 +1,9 @@
 class Entree < ActiveRecord::Base
+  attr_accessible :description, :title, :image, :restaurant
+
   has_many :reviews
   has_many :images, as: :imageable
-  attr_accessible :description, :title, :image, :restaurant
+  has_many :ratings, dependent: :destroy
 
   validates :description, :title, :restaurant, presence: true
   validates :title, uniqueness: true
@@ -18,6 +20,10 @@ class Entree < ActiveRecord::Base
     else
       scoped
     end
+  end
+
+  def total_ratings
+    self.ratings.sum(:value).to_i
   end
 
 end
